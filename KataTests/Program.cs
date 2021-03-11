@@ -14,6 +14,7 @@ namespace KataTests
     {
         static void Main(string[] args)
        {
+          
             //int[] arr = { 20, 10, 30, 10, 10, 15, 35 };
             //string result = string.Join("", arr);
             //Console.WriteLine(result);
@@ -90,7 +91,10 @@ namespace KataTests
             //Console.WriteLine(Kata.Doubleton(1234));
             //Console.WriteLine(Kata.ComputeDepth(42));
             //Console.WriteLine(Kata.WhatTimeIsIt(191.87d));
-            Console.WriteLine(Kata.Solve2(new int[] { 4,7,10}));
+            //Console.WriteLine(Kata.Solve2(new int[] { 4,7,10}));
+            //Console.WriteLine(Kata.SumCubes(10));
+            //Console.WriteLine(Kata.Stars(5));
+            Console.WriteLine(Kata.Order(""));
             
 
 
@@ -1121,6 +1125,56 @@ namespace KataTests
             }
 
             return count;
+        }
+
+        public static long SumCubes(int n)
+        {
+            double x = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                x += Math.Pow(i, 3);
+            }
+            return (long)x;
+        }
+
+        public static string Stars(int n)
+        {
+            string result = "";
+            if (n < 0 || n % 2 == 0)
+                return null;
+            else
+                for (int i = 1; i <= n; i+=2)
+                {
+                    result += new string(' ', (n - i)/2) + new string('*', i) + "\n";
+                }
+            for (int y = n - 2; y > 0; y-=2)
+            {
+                result += new string(' ', (n - y)/ 2) + new string('*', y) + "\n";
+            }
+            return result;
+        }
+
+        public static string Order(string words)
+        {
+            if (words == "")
+                return "";
+            else
+            {
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+
+                string[] split = words.Split(' ');
+
+                foreach (var item in split)
+                {
+                    Match match = Regex.Match(item, @"(\d+)");
+                    dict.Add(item, Convert.ToInt32(match.Value));
+                }
+                var sorted = dict.OrderBy(a => a.Value).ToList();
+
+                List<string> list = sorted.Select(a => a.Key).ToList();
+
+                return String.Join(" ", list);
+            }
         }
     }
 
