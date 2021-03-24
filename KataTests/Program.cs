@@ -126,7 +126,12 @@ namespace KataTests
             //Console.WriteLine(Kata.Scramble("cedewaraaossoqqyt", "codewars"));
             //Console.WriteLine(Kata.MultiplicationTable(5));
             //Console.WriteLine(Kata.Epidemic(12,288,1007,2,0.00206,0.46));
-            Console.WriteLine(Kata.IsVow(new object[] { 118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113, 120, 106 }));
+            //Console.WriteLine(Kata.IsVow(new object[] { 118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113, 120, 106 }));
+            //Console.WriteLine(Kata.WallPaper(6.3, 4.5, 3.29));
+            //Console.WriteLine(Kata.MaxSumDig(50000, 150));
+            //Console.WriteLine(Kata.SortTransform(new[] { 111, 112, 113, 114, 115, 113, 114, 110 }));
+            //Console.WriteLine(Kata.MaxRot(38458215));
+            Console.WriteLine(Kata.NbDig(11011, 2));
 
         }
         public class Dinglemouse
@@ -1274,7 +1279,7 @@ namespace KataTests
             long even = 0;
             foreach (var item in str)
             {
-                if(item % 2 == 0)
+                if (item % 2 == 0)
                 {
                     even += int.Parse(item.ToString());
                 }
@@ -1283,7 +1288,7 @@ namespace KataTests
                     odd += int.Parse(item.ToString());
                 }
             }
-            if(even > odd)
+            if (even > odd)
             {
                 return "Even is greater than Odd";
             }
@@ -1300,9 +1305,9 @@ namespace KataTests
             string toFormat = "yyyy-MM-dd";
             DateTime today = new DateTime(2016, 1, 1);
             int count = 0;
-            while(a > a0)
+            while (a > a0)
             {
-                a0 += a0 * ( p / 36000);
+                a0 += a0 * (p / 36000);
                 count++;
             }
             DateTime result = today.AddDays(count);
@@ -1319,7 +1324,7 @@ namespace KataTests
                 list.Add(data.Skip(i).Take(8).ToArray());
             }
             list.Reverse();
-            
+
             foreach (var item in list)
             {
                 result += string.Join("", item);
@@ -1330,7 +1335,7 @@ namespace KataTests
 
         public static string PrinterError(String s)
         {
-            
+
             return $"{Regex.Matches(s, @"[n-zN-Z]").Count} / {s.Length}";
         }
 
@@ -1362,7 +1367,7 @@ namespace KataTests
                 var index = oddsIndexes[j];
                 newArray[index] = value;
             }
-           
+
             return newArray;
         }
 
@@ -1402,7 +1407,7 @@ namespace KataTests
             string result = "";
             foreach (var item in x)
             {
-                switch(item)
+                switch (item)
                 {
                     case "26":
                         result += "a";
@@ -1498,8 +1503,8 @@ namespace KataTests
 
         public static double heron(double a, double b, double c)
         {
-            double s = (a + b + c)/2;
-            double g = Math.Sqrt(s*(s - a)*(s - b)*(s - c));
+            double s = (a + b + c) / 2;
+            double g = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
             return g;
         }
 
@@ -1545,7 +1550,7 @@ namespace KataTests
 
         public static int GetNumber(string str)
         {
-            
+
             string[] n = new string[str.Length - 4];
             for (int i = 0; i < n.Length; i++)
             {
@@ -1565,10 +1570,10 @@ namespace KataTests
         {
             foreach (var item in values)
             {
-                if(item % 2 != 0)
-                values = values.Where(val => val != item).ToArray();
+                if (item % 2 != 0)
+                    values = values.Where(val => val != item).ToArray();
             }
-            
+
             return values;
         }
 
@@ -1594,16 +1599,16 @@ namespace KataTests
             int count = 0;
             foreach (var item in str)
             {
-                for (int y = str.IndexOf(item) +1; y < str.Length; y++)
+                for (int y = str.IndexOf(item) + 1; y < str.Length; y++)
                 {
-                    if(item == str[y])
+                    if (item == str[y])
                     {
                         count++;
                     }
                 }
             }
             return count > 0 ? false : true;
-           
+
         }
 
         public static string[] Bald(string x)
@@ -1612,13 +1617,13 @@ namespace KataTests
             int count = 0;
             foreach (var item in x)
             {
-                if(item == '/')
+                if (item == '/')
                 {
                     count++;
                 }
             }
             arr[0] = x.Replace("/", "-");
-            switch(count)
+            switch (count)
             {
                 case 0:
                     arr[1] = "Clean!";
@@ -1643,18 +1648,18 @@ namespace KataTests
         }
         public static string MoveVowel(string input)
         {
-            
+
             string vowels = "aeiou";
             int i = 0;
             int y = 0;
-            char[] array = new char[input.Length]; 
+            char[] array = new char[input.Length];
             foreach (var item in input)
             {
                 if (vowels.Contains(item))
                 {
                     i++;
                 }
-                
+
             }
             foreach (var item in input)
             {
@@ -1696,11 +1701,11 @@ namespace KataTests
             }
             while (total < lng * wdth)
             {
-              
+
                 list.Add(min * min);
                 total += min * min;
                 max -= min;
-                if(max < min)
+                if (max < min)
                 {
                     temp = max;
                     max = min;
@@ -1708,14 +1713,14 @@ namespace KataTests
 
                 }
             }
-            
+
             foreach (var item in list)
             {
                 newlist.Add((int)Math.Sqrt(item));
             }
             newlist.ForEach(Console.WriteLine);
             return newlist;
-           
+
         }
         public static bool Scramble(string str1, string str2)
         {
@@ -1732,12 +1737,12 @@ namespace KataTests
 
         public static int[,] MultiplicationTable(int size)
         {
-            int[,] arr = new int[size,size];
+            int[,] arr = new int[size, size];
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    arr[i, j] = (i+1)*(j+1);
+                    arr[i, j] = (i + 1) * (j + 1);
                 }
             }
             foreach (var item in arr)
@@ -1774,7 +1779,7 @@ namespace KataTests
             string vow = "aeiou";
             for (int i = 0; i < a.Length; i++)
             {
-                if(vow.Contains(Convert.ToChar(a[i])))
+                if (vow.Contains(Convert.ToChar(a[i])))
                 {
                     a[i] = (Convert.ToChar(a[i])).ToString();
                 }
@@ -1785,8 +1790,131 @@ namespace KataTests
             }
             return a;
         }
+        public static string WallPaper(double l, double w, double h)
+        {
+            Dictionary<int, string> dict = new Dictionary<int, string>()
+            {
+                {1,"one" },
+                {2,"two" },
+                {3, "three" },
+                {4,"four" },
+                {5,"five" },
+                {6,"six"},
+                {7,"seven" },
+                {8,"eight" },
+                {9,"nine" },
+                {10,"ten" },
+                {11,"eleven" },
+                {12,"twelve" },
+                {13,"thirteen" },
+                {14,"fourteen" },
+                {15,"fifteen" },
+                {16,"sixteen" },
+                {17,"seventeen" },
+                {18,"eighteen" },
+                {19,"nineteen" },
+                {20,"twenty" }
+
+            };
+            if (l == 0 || w == 0 || h == 0)
+            {
+                return "zero";
+            }
+            double total = (int)Math.Ceiling((((l + w) * 2 * h) / 5.2) * 1.15);
+            
+            var myKey = dict.FirstOrDefault(x => x.Key == Convert.ToInt32(total)).Value;
+            
+            return myKey.ToString();
+        }
+
+        public static long[] MaxSumDig(long nmax, int maxsm)
+        {
+            int sum = 0;
+            int countsum = 0;
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            long[] arr = new long[3];
+            for (int i = 1000; i <= nmax; i++)
+            {
+                sum = 0;
+                int u = i;
+                while (u != 0)
+                { 
+                   sum += u % 10;
+                   u /= 10;
+                    
+                }
+                dict.Add(i,sum);
+            }
+            foreach (var item in dict.Values)
+            {
+                if(item <= maxsm)
+                {
+                    countsum++;
+                }
+            }
+            var values = dict.Where(item => item.Value <= maxsm).Select(item => item.Key).ToList();
+            var avg = values.Average();
+            //int closest = values.Aggregate((x, y) => Math.Abs(x - avg) < Math.Abs(y - avg) ? x : y);
+            long closest = values.OrderBy(n => Math.Abs(avg - n)).First();
+
+
+            arr[0] = countsum;
+            arr[1] = closest;
+            arr[2] = values.Sum();
+            return arr;
+        }
+
+        public static string SortTransform(int[] arr)
+        {
+            int lenght = arr.Length;
+            string result = Convert.ToChar(arr[0]).ToString() + Convert.ToChar(arr[1]).ToString() + Convert.ToChar(arr[lenght - 2]).ToString() + Convert.ToChar(arr[lenght - 1]).ToString() + "-";
+            Array.Sort(arr);
+            result += Convert.ToChar(arr[0]).ToString() + Convert.ToChar(arr[1]).ToString() + Convert.ToChar(arr[lenght - 2]).ToString() + Convert.ToChar(arr[lenght - 1]).ToString() + "-";
+            Array.Reverse(arr);
+            result += Convert.ToChar(arr[0]).ToString() + Convert.ToChar(arr[1]).ToString() + Convert.ToChar(arr[lenght - 2]).ToString() + Convert.ToChar(arr[lenght - 1]).ToString() + "-";
+            Array.Reverse(arr);
+            result += Convert.ToChar(arr[0]).ToString() + Convert.ToChar(arr[1]).ToString() + Convert.ToChar(arr[lenght - 2]).ToString() + Convert.ToChar(arr[lenght - 1]).ToString();
+            return result;
+        }
+
+        public static long MaxRot(long n)
+        {
+            List<long> list = new List<long>();
+            string result = n.ToString();
+            int x = result.Length;
+            list.Add(n);
+            result = result.Substring(1, x - 1) + result.Substring(0,1);
+            list.Add(Convert.ToInt64(result));
+            for (int i = 1; i < x - 1; i++)
+            {
+                result = result.Substring(0, i) + result.Substring(i+1, x - (i+1)) + result.Substring(i, 1);
+                list.Add(Convert.ToInt64(result));
+            }
+            return list.Max();
+        }
+
+        public static int NbDig(int n, int d)
+        {
+            int count = 0;
+            List<int> list = new List<int>();
+            for (int i = 0; i <= n; i++)
+            {
+                list.Add((int)Math.Pow(i,2));
+            }
+            string data = string.Join("", list);
+            var array = data.ToCharArray();
+            foreach (var item in array)
+            {
+                if(item == d+48)
+                {
+                    count++;
+                }
+            }
+            return count;
+
+            //return Enumerable.Range(0, n + 1).Sum(i => (i * i).ToString().Count(c => c == d.ToString().First()));
+        }
     }
-   
 }
 
     
