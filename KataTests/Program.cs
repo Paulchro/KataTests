@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Globalization;
 using System.Diagnostics;
+using System.Numerics;
 
 namespace KataTests
 {
     class Program
     {
         static void Main(string[] args)
-       {
+        {
 
             //int[] arr = { 20, 10, 30, 10, 10, 15, 35 };
             //string result = string.Join("", arr);
@@ -131,7 +132,15 @@ namespace KataTests
             //Console.WriteLine(Kata.MaxSumDig(50000, 150));
             //Console.WriteLine(Kata.SortTransform(new[] { 111, 112, 113, 114, 115, 113, 114, 110 }));
             //Console.WriteLine(Kata.MaxRot(38458215));
-            Console.WriteLine(Kata.NbDig(11011, 2));
+            //Console.WriteLine(Kata.NbDig(11011, 2));
+            //Console.WriteLine(Kata.SmallEnough(new int[] { 101, 45, 75, 105, 99, 107 }, 107));
+            //Console.WriteLine(Kata.EasyLine(7));
+            //Console.WriteLine(Kata.binaryArrayToNumber(new int[] { 0,1,0,1}));
+            //Console.WriteLine(Kata.Gordon("What feck damn cake"));
+            //Console.WriteLine(Kata.ReverseNumber(-123));
+            //Console.WriteLine(Kata.AdjacentElementsProduct(new int[] { 21, 3, 6, -2, -5, 7, 3 }));
+            //Console.WriteLine(Kata.ReverseLetter("ultr53o?n"));
+            Console.WriteLine(Kata.MaxRedigit(123));
 
         }
         public class Dinglemouse
@@ -1821,9 +1830,9 @@ namespace KataTests
                 return "zero";
             }
             double total = (int)Math.Ceiling((((l + w) * 2 * h) / 5.2) * 1.15);
-            
+
             var myKey = dict.FirstOrDefault(x => x.Key == Convert.ToInt32(total)).Value;
-            
+
             return myKey.ToString();
         }
 
@@ -1838,16 +1847,16 @@ namespace KataTests
                 sum = 0;
                 int u = i;
                 while (u != 0)
-                { 
-                   sum += u % 10;
-                   u /= 10;
-                    
+                {
+                    sum += u % 10;
+                    u /= 10;
+
                 }
-                dict.Add(i,sum);
+                dict.Add(i, sum);
             }
             foreach (var item in dict.Values)
             {
-                if(item <= maxsm)
+                if (item <= maxsm)
                 {
                     countsum++;
                 }
@@ -1883,11 +1892,11 @@ namespace KataTests
             string result = n.ToString();
             int x = result.Length;
             list.Add(n);
-            result = result.Substring(1, x - 1) + result.Substring(0,1);
+            result = result.Substring(1, x - 1) + result.Substring(0, 1);
             list.Add(Convert.ToInt64(result));
             for (int i = 1; i < x - 1; i++)
             {
-                result = result.Substring(0, i) + result.Substring(i+1, x - (i+1)) + result.Substring(i, 1);
+                result = result.Substring(0, i) + result.Substring(i + 1, x - (i + 1)) + result.Substring(i, 1);
                 list.Add(Convert.ToInt64(result));
             }
             return list.Max();
@@ -1899,13 +1908,13 @@ namespace KataTests
             List<int> list = new List<int>();
             for (int i = 0; i <= n; i++)
             {
-                list.Add((int)Math.Pow(i,2));
+                list.Add((int)Math.Pow(i, 2));
             }
             string data = string.Join("", list);
             var array = data.ToCharArray();
             foreach (var item in array)
             {
-                if(item == d+48)
+                if (item == d + 48)
                 {
                     count++;
                 }
@@ -1914,7 +1923,110 @@ namespace KataTests
 
             //return Enumerable.Range(0, n + 1).Sum(i => (i * i).ToString().Count(c => c == d.ToString().First()));
         }
+        public static bool SmallEnough(int[] a, int limit)
+        {
+            bool bol = false;
+            int count = 0;
+            foreach (var item in a)
+            {
+                if (item <= limit)
+                {
+                    count++;
+                }
+                if (count == a.Length)
+                {
+                    bol = true;
+                }
+            }
+            return bol;
+
+        }
+
+        public static BigInteger EasyLine(int n)
+        {
+            BigInteger sum = 1;
+            for (var i = 1; i <= n; i++)
+            {
+                sum = sum * (n + i) / i;
+            }
+
+            return sum;
+        }
+
+        public static int binaryArrayToNumber(int[] BinaryArray)
+        {
+            return Convert.ToInt32(string.Join("", BinaryArray),2);
+        }
+
+        public static string Gordon(string a)
+        {
+            string[] arr = a.ToLower().Split(' ');
+           
+            string result = "";
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if(arr[i].Contains("a"))
+                {
+                    arr[i] = arr[i].Replace("a", "@");
+                }
+                if(arr[i].Contains("e"))
+                {
+                    arr[i] = arr[i].Replace("e", "*");
+                }
+                if (arr[i].Contains("i"))
+                {
+                    arr[i] = arr[i].Replace("i", "*");
+                }
+                if (arr[i].Contains("o"))
+                {
+                    arr[i] = arr[i].Replace("o", "*");
+                }
+                if (arr[i].Contains("u"))
+                {
+                    arr[i] = arr[i].Replace("u", "*");
+                }
+                arr[i] += "!!!!";
+               
+            }
+            return string.Join(" ", arr).ToUpper();
+        }
+
+        public static int ReverseNumber(int n)
+        {
+            int reverse = 0, rem;
+            while (n != 0)
+            {
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n /= 10;
+            }
+
+            return reverse;
+        }
+
+        public static int AdjacentElementsProduct(int[] array)
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < array.Length -1; i++)
+            {
+                list.Add(array[i] * array[i + 1]);
+            }
+            return list.Max();
+        }
+
+        public static string ReverseLetter(string str)
+        {
+            var result = new string(str.Where(c => Char.IsLetter(c)).ToArray()).Reverse();
+            return string.Concat(result);
+        }
+        public static int? MaxRedigit(int num)
+        {
+            if (num > 99 && num < 1000)
+                return int.Parse(string.Concat($"{num}".OrderByDescending(e => e)));
+            return null;
+        }
     }
+
 }
 
     
