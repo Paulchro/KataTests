@@ -26,13 +26,13 @@ namespace KataTests
             //Console.WriteLine(Kata.ExpandedForm(132123));
             //Console.WriteLine(Kata.DuplicateCount("hello"));
             //Console.WriteLine(Kata.RentalCarCost(7));
-            //Kata.PipeFix(numbers).ForEach(Console.WriteLine);
+            ////Kata.PipeFix(numbers).ForEach(Console.WriteLine);
             //Console.WriteLine(Kata.WordsToMarks("hello"));
-            //Console.WriteLine(Kata.SharedBits(7,15));
+            //Console.WriteLine(Kata.SharedBits(7, 15));
             //Console.WriteLine(Kata.AlphabetPosition("The sunset sets at twelve o' clock."));
-            //Console.WriteLine(Kata.HighAndLow("4 1 32 56 5 2"));
+            ////Console.WriteLine(Kata.HighAndLow("4 1 32 56 5 2"));
             //Console.WriteLine(Kata.Range(6, 8));
-            //Console.WriteLine(Kata.Hero(100,51));
+            //Console.WriteLine(Kata.Hero(100, 51));
             //Console.WriteLine(Kata.High("Hello worrld"));
             //int[] a = new int[] { 144, 121, 19, 161, 19, 144, 19, 11 };
             //int[] b = new int[] { 11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19 };
@@ -46,9 +46,9 @@ namespace KataTests
             //Console.WriteLine(Kata.Arithmetic(1, 2, "add"));
             //Console.WriteLine(Kata.GetUnique(new[] { 1, 2, 2, 2 }));
             //Console.WriteLine(Kata.ValidParentheses("hi)("));
-            //List<object> list = new List<object>(){ 1,2,"aasf","1","123",123};
+            //List<object> list = new List<object>() { 1, 2, "aasf", "1", "123", 123 };
             //Console.WriteLine(Kata.GetIntegersFromList(list));
-            //Console.WriteLine(Kata.listSquared(1,250));
+            //Console.WriteLine(Kata.listSquared(1, 250));
             //Console.WriteLine(Kata.Longest("aretheyhere", "yestheyarehere"));
 
             //var pp = new int[] { 4, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196, 216, 225, 243, 256, 289, 324, 343, 361, 400, 441, 484 };
@@ -59,7 +59,7 @@ namespace KataTests
             //Console.WriteLine(Kata.findNb(4183059834009));
             //Console.WriteLine(Kata.GetOrder("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"));
             //Console.WriteLine(Kata.DescendingOrder(123124));
-            //Console.WriteLine(Kata.Solve("catchphrase"));
+            ////Console.WriteLine(Kata.Solve("catchphrase"));
             //Console.WriteLine(Kata.Test("1 2 1 1"));
             //Console.WriteLine(Kata.EncryptThis("Thank you Piotr for all your help"));
             //Console.WriteLine(Kata.WhoLikedMe(new string[] { })); // must be "no one likes this"
@@ -82,18 +82,18 @@ namespace KataTests
             //Console.WriteLine(Kata.NbYear(1500, 5, 100, 5000));
             //Console.WriteLine(Kata.ToDoubleArray(new string[] { "1.1", "2.2", "3.3" }));
             //Console.WriteLine(Kata.Tickets(new int[] { 25, 25, 50, 50 }));
-            //Console.WriteLine(Kata.overTheRoad(7,11));
+            //Console.WriteLine(Kata.overTheRoad(7, 11));
             //Console.WriteLine(Kata.OddOrEven(new int[] { -1023, 1, -2 }));
             //Console.WriteLine(Kata.HighestRank(new int[] { 12, 10, 8, 12, 7, 6, 4, 10, 12 }));
             //Console.WriteLine(Kata.NumberFormat(123124));
-            //Console.WriteLine(Kata.AlphabetWar("*rd"));
-            //Console.WriteLine(Kata.TwoSum(new[] { 2, 2, 3 }, 4).OrderBy(a => a).ToArray());
+            ////Console.WriteLine(Kata.AlphabetWar("*rd"));
+            ////Console.WriteLine(Kata.TwoSum(new[] { 2, 2, 3 }, 4).OrderBy(a => a).ToArray());
             //Console.WriteLine(Kata.WhatIsTheTime("10:00"));
             //Console.WriteLine(Kata.calculateString("fsdfsd235???34.4554s4234df-sdfgf2g3h4j442"));
             //Console.WriteLine(Kata.Doubleton(1234));
             //Console.WriteLine(Kata.ComputeDepth(42));
             //Console.WriteLine(Kata.WhatTimeIsIt(191.87d));
-            //Console.WriteLine(Kata.Solve2(new int[] { 4,7,10}));
+            //Console.WriteLine(Kata.Solve2(new int[] { 4, 7, 10 }));
             //Console.WriteLine(Kata.SumCubes(10));
             //Console.WriteLine(Kata.Stars(5));
             //Console.WriteLine(Kata.Order(""));
@@ -116,17 +116,17 @@ namespace KataTests
             //Console.WriteLine(Kata.MinimumNumber(new int[] { 50, 39, 49, 6, 17, 28 }));
             //Console.WriteLine(Kata.NoOdds(new int[] { 1, 2, 3, 4, 5 }));
             //Console.WriteLine(Kata.FindRoot(273409989789784.88, 43));
-            //Console.WriteLine(Pow(-4,-2));
+            //Console.WriteLine(Pow(-4, -2));
             //Console.WriteLine(Kata.evaporator(10, 10, 10));
             //Dinglemouse dinglemouse = new Dinglemouse("Clint", "Eastwood");
             //Console.WriteLine(dinglemouse.FullName);
             //Console.WriteLine(Kata.HasUniqueChars("abcdef"));
             //Console.WriteLine(Kata.Bald("--/--/---/-/---"));
             //Console.WriteLine(Kata.MoveVowel("maker"));
-            //Console.WriteLine(Kata.sqInRect(5,3));
+            //Console.WriteLine(Kata.sqInRect(5, 3));
             //Console.WriteLine(Kata.Scramble("cedewaraaossoqqyt", "codewars"));
             //Console.WriteLine(Kata.MultiplicationTable(5));
-            //Console.WriteLine(Kata.Epidemic(12,288,1007,2,0.00206,0.46));
+            //Console.WriteLine(Kata.Epidemic(12, 288, 1007, 2, 0.00206, 0.46));
             //Console.WriteLine(Kata.IsVow(new object[] { 118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113, 120, 106 }));
             //Console.WriteLine(Kata.WallPaper(6.3, 4.5, 3.29));
             //Console.WriteLine(Kata.MaxSumDig(50000, 150));
@@ -135,12 +135,40 @@ namespace KataTests
             //Console.WriteLine(Kata.NbDig(11011, 2));
             //Console.WriteLine(Kata.SmallEnough(new int[] { 101, 45, 75, 105, 99, 107 }, 107));
             //Console.WriteLine(Kata.EasyLine(7));
-            //Console.WriteLine(Kata.binaryArrayToNumber(new int[] { 0,1,0,1}));
+            //Console.WriteLine(Kata.binaryArrayToNumber(new int[] { 0, 1, 0, 1 }));
             //Console.WriteLine(Kata.Gordon("What feck damn cake"));
             //Console.WriteLine(Kata.ReverseNumber(-123));
             //Console.WriteLine(Kata.AdjacentElementsProduct(new int[] { 21, 3, 6, -2, -5, 7, 3 }));
-            //Console.WriteLine(Kata.ReverseLetter("ultr53o?n"));
-            Console.WriteLine(Kata.MaxRedigit(123));
+            ////Console.WriteLine(Kata.ReverseLetter("ultr53o?n"));
+            //Console.WriteLine(Kata.MaxRedigit(123));
+            //Console.WriteLine(Kata.CountSalutes(">>>>>>>>>>>>>>>>>>>>>----<->"));
+            //Console.WriteLine(Kata.RemoveExclamationMarks("!!"));
+            //Console.WriteLine(Kata.Digitize(1234));
+            //Console.WriteLine(Kata.Fortune(100000, 1, 2000, 15, 1));
+            //Console.WriteLine(Kata.LongestConsec(new String[] { "ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh" }, 1));
+            //Console.WriteLine(Kata.Table(new[]
+            //  {
+            //    "6:0 FC Bayern Muenchen - Werder Bremen",
+            //    "1:0 Eintracht Frankfurt - Schalke 04",
+            //    "0:2 FC Augsburg - VfL Wolfsburg",
+            //    "1:1 Hamburger SV - FC Ingolstadt",
+            //    "2:0 1. FC Koeln - SV Darmstadt",
+            //    "2:1 Borussia Dortmund - FSV Mainz 05",
+            //    "2:1 Borussia Moenchengladbach - Bayer Leverkusen",
+            //    "-:- Hertha BSC Berlin - SC Freiburg",
+            //    "-:- TSG 1899 Hoffenheim - RasenBall Leipzig"
+            //  }));
+            //Console.WriteLine(Kata.Check(new object[] { 66, 101 }, 66));
+            //Console.WriteLine(Kata.Movie(100, 10, 0.95));
+            //Console.WriteLine(Kata.ReverseSeq(5));
+            //Console.WriteLine(Kata.Divisors(4));
+            //Console.WriteLine(Kata.Crap(new char[,] { { '_', '_', '_', '_' }, { '_', '_', '_', '@' }, { '_', '_', '@', '_' } }, 1, 1));
+            //Console.WriteLine(Kata.howmuch(1, 100));
+            //Console.WriteLine(Kata.ValidateString(new[] { "code", "wars" }, "codewar"));
+            //Console.WriteLine(Kata.Averages(new int[] { 10}));
+            //Console.WriteLine(Kata.Gps(14, new double[] { }));
+            //Console.WriteLine(Kata.PartsSums(new int[] { 0, 1, 3, 6, 10 }));
+            Console.WriteLine(Kata.PowerSumDigTerm(2));
 
         }
         public class Dinglemouse
@@ -2025,7 +2053,336 @@ namespace KataTests
                 return int.Parse(string.Concat($"{num}".OrderByDescending(e => e)));
             return null;
         }
+
+        public static int CountSalutes(string hallway)
+        {
+            int ns = 0, nr = 0;
+            foreach (char c in hallway)
+            {
+                switch (c)
+                {
+                    case '>': nr++; break;
+                    case '<': ns += nr; break;
+                }
+            }
+            return ns * 2;
+        }
+        public static string RemoveExclamationMarks(string s)
+        {
+            return s.Replace("!", "");
+        }
+        public static long[] Digitize(long n)
+        {
+            var digits = new List<long>();
+
+            for (; n != 0; n /= 10)
+                digits.Add((int)(n % 10));
+
+            var arr = digits.ToArray();
+            
+            return arr;
+        }
+
+        public static Boolean Fortune(int f0, double p, int c0, int n, double i)
+        {
+            
+            for (int y = 0; y <= n; y++)
+            {
+                f0 = (int)(f0 + (f0 * (p / 100)) - c0);
+                c0 = (int)(c0 + (c0 * (i / 100)));
+            }
+
+            return f0 > 0;
+        }
+
+        public static String LongestConsec(string[] strarr, int k)
+        {
+            if (k == 0 || k > strarr.Length)
+            {
+                return "";
+            }
+            string s = "";
+            List<string> list = new List<string>();
+            for (int i = 0; i < strarr.Length - k + 1; i++)
+            {
+                for (int y = 0; y < k; y++)
+                {
+                    s += strarr[i+y];
+
+                }
+                list.Add(s);
+                s = "";
+            }
+            return list.OrderByDescending(x => x.Length).First();
+
+            //return s.Length == 0 || s.Length < k || k <= 0 ? ""
+            //: Enumerable.Range(0, s.Length - k + 1)
+            //            .Select(x => string.Join("", s.Skip(x).Take(k)))
+            //            .OrderByDescending(x => x.Length)
+            //            .First();
+        }
+
+        public static string Table(string[] results)
+        {
+            List<string[]> tablePlaces = new List<string[]>();
+            foreach (var resultMatch in results)
+            {
+                var result = resultMatch.Substring(0, resultMatch.IndexOf(" "));
+                var match = resultMatch.Substring(resultMatch.IndexOf(" ") + 1);
+                var played = !result.Contains("-");
+                var goals = result.Split(':').Select(g => played ? int.Parse(g) : 0).ToArray();
+                var teams = match.Split('-');
+                tablePlaces.Add(new string[]
+                {
+        "0",
+        teams[0].Trim(),
+        played ? "1" : "0",
+        goals[0] > goals[1] ? "1" : "0",
+        played ? (goals[0] == goals[1] ? "1" : "0") : "0",
+        goals[0] < goals[1] ? "1" : "0",
+        goals[0] + ":" + goals[1],
+        (goals[0] - goals[1]).ToString(),
+        played ? (goals[0] > goals[1] ? "3" : goals[0] == goals[1] ? "1" : "0") : "0",
+                });
+                tablePlaces.Add(new string[]
+                {
+        "0",
+        teams[1].Trim(),
+        played ? "1" : "0",
+        goals[1] > goals[0] ? "1" : "0",
+        played ? (goals[1] == goals[0] ? "1" : "0") : "0",
+        goals[1] < goals[0] ? "1" : "0",
+        goals[1] + ":" + goals[0],
+        (goals[1] - goals[0]).ToString(),
+        played ? (goals[1] > goals[0] ? "3" : goals[1] == goals[0] ? "1" : "0") : "0",
+                });
+            }
+
+            tablePlaces = tablePlaces.OrderByDescending(tp => int.Parse(tp[8]))
+                          .ThenByDescending(tp => int.Parse(tp[7]))
+                          .ThenByDescending(tp => int.Parse(tp[6].Split(':')[0]))
+                          .ThenBy(tp => tp[1]).ToList();
+
+            tablePlaces[0][0] = "1";
+
+            for (int i = 2; i <= 18; i++)
+            {
+                var line = tablePlaces[i - 1];
+
+                if (line[6] == tablePlaces[i - 2][6] && line[8] == tablePlaces[i - 2][8])
+                {
+                    line[0] = tablePlaces[i - 2][0];
+                }
+                else
+                {
+                    line[0] = i.ToString();
+                }
+            }
+
+            return string.Join("\n", tablePlaces.Select(tp => tp[0].PadLeft(2, ' ') + ". " + tp[1].PadRight(30, ' ') + tp[2] + "  " + tp[3] + "  " + tp[4] + "  " + tp[5] + "  " + tp[6] + "  " + tp[8]));
+        }
+
+        public static bool Check(object[] a, object x)
+        {
+            return a.Intersect(new object[] { x }).Any();
+        }
+
+        public static int Movie(int card, int ticket, double perc)
+        {
+            int result = 0;
+            double cardticket = 0;
+            double y = ticket;
+
+            for (int i = 0; i < int.MaxValue; i++)
+            {
+                
+                cardticket += y * perc;
+                y *= perc;
+                double h = cardticket + card;
+                if (ticket * i > Math.Ceiling(h))
+                {
+                    result = i;
+                    break;
+                }
+                
+            }
+            return result;
+        }
+
+        public static int[] ReverseSeq(int n)
+        {
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = n - i;
+            }
+            return arr;
+        }
+        public static int Divisors(int n)
+        {
+            int count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if(n % i == 0)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        public static string Crap(char[,] x, int bags, int cap)
+        {
+            int count = 0;
+            foreach (var item in x)
+            {
+                if(item == 'D')
+                {
+                    return "Dog!!";
+                }
+                if(item == '@')
+                {
+                    count++;
+                }
+            }
+            return count <= bags * cap ? "Clean" : "Cr@p";
+        }
+
+        public static string howmuch(int m, int n)
+        {
+            int max = Math.Max(m, n);
+            int min = Math.Min(m, n);
+            List<string> list = new List<string>();
+            if(n == m)
+            {
+                return "[]";
+            }
+            for (int i = min; i <= max; i++)
+            {
+                for (int y = 1; y < max - min; y++)
+                {
+                    if (i % (7 * y) == 2 )
+                    {
+                        for (int h = y; h > 0; h--)
+                        {
+                            if(i % (9 * h) == 1)
+                            {
+                                list.Add($"[M: {i}, B: {i / 7}, C: {i / 9}]");
+                            }
+                        }
+                        break;
+                    }
+                    
+                }
+            }
+            return "[" + string.Join("", list) + "]";
+        }
+
+        public static bool ValidateString(string[] dictionary, string word)
+        {
+            string open = word;
+            foreach (var w in dictionary)
+            {
+                if (word.Contains(w))
+                {
+                    foreach (var a in w)
+                    {
+                        open = open.Replace(new string(a, 1), "");
+                    }
+                }
+            }
+            if (open.Length == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static double[] Averages(int[] numbers)
+        {
+            if (numbers.Length < 2) return new double[0];
+            double[] arr = new double[numbers.Length - 1];
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                arr[i] = (numbers[i] + numbers[i + 1]) / 2f;
+            }
+            return arr;
+        }
+
+        public static int Gps(int s, double[] x)
+        {
+            if (s == 0 || x.Sum() == 0)
+            {
+                return 0;
+            }
+            List<double> list = new List<double>();
+            for (int i = 0; i < x.Length - 1; i++)
+            {
+                list.Add(3600 * (x[i + 1] - x[i]) / s);
+            }
+            return (int)Math.Floor(list.Max());
+        }
+
+        public static int[] PartsSums(int[] ls)
+        {
+            //int l = ls.Length;
+            //int[] arr = new int[l + 1];
+            //List<int[]> list = new List<int[]>();
+            //for (int y = 0; y < l; y++)
+            //{
+            //    list.Add(ls);
+            //    ls = ls.Where(val => val != ls[0]).ToArray();
+            //}
+            //list.Add(new int[] { });
+            //int i = 0;
+            //for (i = 0; i < list.Count - 1; i++)
+            //{
+            //    arr[i] = list[i].Sum();
+            //}
+            //arr[i] = 0;
+
+            //foreach (var item in arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //return arr;
+            var arr = new int[ls.Length + 1];
+
+            for (int i = ls.Length - 1; i >= 0; i--)
+            {
+                arr[i] = ls[i] + arr[i + 1];
+            }
+
+            return arr;
+        }
+
+        public static long PowerSumDigTerm(int n)
+        {
+            List<long> powers = new List<long>();
+            for (int i = 3; i < 500; i++)
+            {
+                for (int k = 2; k < 50; k++)
+                {
+                    long sum = 0;
+                    long pow = (long)Math.Pow(i, k);
+                    long powCopy = pow;
+                    while (powCopy > 0)
+                    {
+                        sum += powCopy % 10;
+                        powCopy = powCopy / 10;
+                    }
+                    if (sum == i)
+                    {
+                        powers.Add(pow);
+                        
+                    }
+                }
+            }
+            powers.Sort();
+            return powers[n - 1];
+        }
     }
+    
 
 }
 
