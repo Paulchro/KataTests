@@ -168,7 +168,19 @@ namespace KataTests
             //Console.WriteLine(Kata.Averages(new int[] { 10}));
             //Console.WriteLine(Kata.Gps(14, new double[] { }));
             //Console.WriteLine(Kata.PartsSums(new int[] { 0, 1, 3, 6, 10 }));
-            Console.WriteLine(Kata.PowerSumDigTerm(2));
+            //Console.WriteLine(Kata.PowerSumDigTerm(2));
+            //Console.WriteLine(Kata.ToTime(323500));
+            //Console.WriteLine(Kata.game(1));
+            //Console.WriteLine(Kata.Maskify("ewqeqweqw"));
+            //Console.WriteLine(Kata.Divisions(2450,5));
+            //Console.WriteLine(Kata.Solution(10));
+            //Console.WriteLine(Kata.Correct("001122"));
+            //Console.WriteLine(Kata.isAValidMessage("3hey5hello2hi"));
+            //Console.WriteLine(Kata.CatMouse("C..m"));
+            //Console.WriteLine(Kata.Bump("_nnnnnnn_n__n______nn__nn_nnn"));
+            //Console.WriteLine(Kata.PosAverage("444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490"));
+            Console.WriteLine(Kata.PaintLetterBoxes(125,132));
+            
 
         }
         public class Dinglemouse
@@ -2380,6 +2392,179 @@ namespace KataTests
             }
             powers.Sort();
             return powers[n - 1];
+        }
+
+        public static string ToTime(int seconds)
+        {
+            int min = seconds / 60;
+           
+            if(min > 59)
+            {
+                int hr = min / 60;
+                min %= (hr * 60);
+                return $"{hr} hour(s) and {min} minute(s)";
+            }
+            return $"0 hour(s) and {min} minute(s)";
+        }
+
+        public static string game(long n)
+        {
+            if (n % 2 == 0)
+            {
+                return string.Format("[{0}]", (n * n) / 2);
+            }
+            return string.Format("[{0}, 2]", n * n);
+        }
+
+        public static string Maskify(string cc)
+        {
+            if (cc.Length > 4)
+            {
+                var sb = new StringBuilder(cc);
+                sb.Remove(0, cc.Length - 4);
+                sb.Insert(0, "#", cc.Length - 4);
+                return sb.ToString();
+            }
+            else
+                return cc;
+        }
+        public static int Divisions(int n, int divisor)
+        {
+            int count = 0;
+            while(n >= divisor)
+            {
+                n /= divisor;
+                count++;
+            }
+            return count;
+        }
+        public static long Solution(long n)
+        {
+            string numbers = "";
+            double result = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                numbers += i.ToString();
+            }
+            var ch = numbers.ToCharArray();
+            foreach (var item in ch)
+            {
+                result += char.GetNumericValue(item);
+            }
+            return (long)result;
+        }
+        public static string Correct(string timeString)
+        {
+            if (string.IsNullOrEmpty(timeString))
+            {
+                return timeString;
+            }
+
+            var m = Regex.Match(timeString, @"^(\d\d):(\d\d):(\d\d)$");
+            if (!m.Success)
+            {
+                return null;
+            }
+
+            var ts = new TimeSpan(
+              int.Parse(m.Groups[1].Value),
+              int.Parse(m.Groups[2].Value),
+              int.Parse(m.Groups[3].Value));
+
+            return ts.ToString(@"hh\:mm\:ss");
+        }
+
+        public static bool isAValidMessage(string message)
+        {
+            //int count = 0;
+            //List<int> ints = new List<int>();
+            //List<string> strings = new List<string>();
+            //var matches = Regex.Matches(message, "([a-z]+)|([0-9]+)");
+            //if(matches.Count % 2 != 0)
+            //{
+            //    return false;
+            //}
+            //for (int i = 0; i < matches.Count; i+=2)
+            //{
+            //    if(matches[i].Value == matches[i+1].Value.Length.ToString())
+            //    {
+            //        count++;
+            //    }
+            //}
+
+            //return count == matches.Count / 2;
+            MatchCollection reg = Regex.Matches(message, @"(\d+)([A-z]*)");
+
+            bool res = true;
+            for (int i = 0; i < reg.Count; i++)
+            {
+                if (reg[i].Groups[1].Value != reg[i].Groups[2].Length.ToString())
+                {
+                    res = false;
+                }
+            }
+            return res;
+        }
+        public static string CatMouse(string x)
+        { 
+            return Regex.Matches(x, "([.])").Count > 3 ? "Escaped!" : "Caught!";
+        }
+        public static string Bump(string input)
+        {
+            return Regex.Matches(input, "([n])").Count > 15 ? "Car dead" : "Woohoo!";
+        }
+        public static double PosAverage(string s)
+        {
+            double index = 0;
+            double count = 0;
+            var list = s.Replace(" ", "").Split(',').ToList();
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                for (int x = i+1; x < list.Count; x++)
+                {
+                    for (int y = 0; y < list[i].Length; y++)
+                    {
+                        if (list[i][y] == list[x][y])
+                        {
+                            index++;
+                        }
+                    }
+                    count++;
+                }
+            }
+            double countr = count * list[0].Length;
+            double result = (index / countr) * 100 ;
+            return result;
+        }
+
+        public static IEnumerable<int> PaintLetterBoxes(int start, int end)
+        {
+            int[] arr = new int[10];
+            List<int> list = new List<int>();
+            for (int i = start; i <= end; i++)
+            {
+                int x = i;
+                while (x > 0)
+                {
+                    var digit = x % 10;
+                    list.Add(digit);
+                    x /= 10;
+                }
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                int count = 0;
+                foreach (var item in list)
+                {
+                    
+                    if(item == i)
+                    {
+                        count++;
+                    }
+                }
+                arr[i] = count;
+            }
+            return arr;
         }
     }
     
