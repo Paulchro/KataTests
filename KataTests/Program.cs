@@ -179,7 +179,15 @@ namespace KataTests
             //Console.WriteLine(Kata.CatMouse("C..m"));
             //Console.WriteLine(Kata.Bump("_nnnnnnn_n__n______nn__nn_nnn"));
             //Console.WriteLine(Kata.PosAverage("444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490"));
-            Console.WriteLine(Kata.PaintLetterBoxes(125,132));
+            //Console.WriteLine(Kata.PaintLetterBoxes(125,132));
+            //Console.WriteLine(Kata.nbMonths(2000, 8000, 1000, 1.5));
+            //Console.WriteLine(Kata.Solution(5));
+            //Console.WriteLine(Kata.Gcd(30,12));
+            //Console.WriteLine(Kata.IsDuoDigit(2020));
+            //Console.WriteLine(Kata.Count1(4));
+            //Console.WriteLine(Kata.Solveint(160,70,70,10));
+            //Console.WriteLine(Kata.SolutionInt(10));
+            Console.WriteLine(Kata.SolutionStr("abcdefz"));
             
 
         }
@@ -2566,8 +2574,107 @@ namespace KataTests
             }
             return arr;
         }
+
+        public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingPerMonth, double percentLossByMonth)
+        {
+            int month = 0;
+            double priceNew = startPriceNew;
+            double priceOld = startPriceOld;
+            double savings = priceOld;
+            while (savings < priceNew)
+            {
+                month++;
+                if (month % 2 == 0) percentLossByMonth += 0.5;
+                priceOld -= priceOld * (percentLossByMonth / 100);
+                priceNew -= priceNew * (percentLossByMonth / 100);
+                savings = month * savingPerMonth + priceOld;
+            }
+            return new int[] { month, (int)(Math.Round(savings - priceNew)) };
+
+        }
+        public static string Solution(int value)
+        {
+            return "Value is " + value.ToString("00000");
+        }
+        public static int Gcd(int a, int b)
+        {
+            while (a != 0 && b != 0)
+            {
+                if (a > b)
+                    a %= b;
+                else
+                    b %= a;
+            }
+
+            return a | b;
+        }
+
+        public static int IsDuoDigit(int number)
+        {
+            var digits = new List<int>();
+
+            for (; number != 0; number /= 10)
+                digits.Add(number % 10);
+
+            var arr = digits.ToArray();
+            if(arr.Distinct().Count() > 2)
+            {
+                return 0;
+            }
+
+            return 1;
+        }
+        public static int Count1(int n)
+        {
+            List<int[]> pairs = new List<int[]>();
+            int count = 0;
+            for (int x = 0; x < n - 1; x++)
+            {
+                for (int y = x + 1; y < n; y++)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        public static string Solveint(int width, int height, int length, int mass)
+        {
+            string result = "";
+            if (width * height * length < 1000000 && width < 150 && height < 150 && length < 150 && mass < 20)
+            {
+                result =  "STANDARD";
+            }
+            else if (width * height * length < 1000000 && (width > 150 || height > 150 || length > 150) || mass < 20)
+            {
+                result = "SPECIAL";
+            }
+            else if ((width * height * length > 1000000 || width > 150 || height > 150 || length > 150) && mass > 20)
+            {
+                result = "REJECTED";
+            }
+            return result;
+              
+        }
+        public static int SolutionInt(int value)
+        {
+            return Enumerable.Range(0, value).Where(n => n % 3 == 0 || n % 5 == 0).Sum();
+        }
+        public static string[] SolutionStr(string str)
+        {
+            int move = 0;
+            if(str.Length % 2 != 0)
+            {
+                str += "_";
+            }
+            string[] arr = new string[str.Length/2];
+            for (int i = 0; i < str.Length / 2; i++)
+            {
+                arr[i] = str.Substring(move, 2);
+                move += 2;
+            }
+            return arr;
+        }
     }
-    
 
 }
 
