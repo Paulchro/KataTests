@@ -187,7 +187,14 @@ namespace KataTests
             //Console.WriteLine(Kata.Count1(4));
             //Console.WriteLine(Kata.Solveint(160,70,70,10));
             //Console.WriteLine(Kata.SolutionInt(10));
-            Console.WriteLine(Kata.SolutionStr("abcdefz"));
+            //Console.WriteLine(Kata.SolutionStr("abcdefz"));
+            //Console.WriteLine(Kata.MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }));
+            //Console.WriteLine(Kata.Task("Monday", 4, 3));
+            //List<int> ts = new List<int> { 50 };
+            //Console.WriteLine(Kata.chooseBestSum(163,3,ts));
+            //Console.WriteLine(Kata.SpinWords("Just kidding there is still one more"));
+            //Console.WriteLine(Kata.Unlock("Nokia"));
+            Console.WriteLine(Kata.digitize(8675309));
             
 
         }
@@ -2674,7 +2681,151 @@ namespace KataTests
             }
             return arr;
         }
+
+        public static int[] MoveZeroes(int[] arr)
+        {
+            int[] arr2 = new int[arr.Length];
+            int y = 0;
+            foreach (var item in arr)
+            {
+                if(item != 0)
+                {
+                    arr2[y] = item;
+                    y++;
+                }
+            }
+            for (int i = arr.Where(x=> x != 0).Count(); i < arr.Length; i++)
+            {
+                arr2[i] = 0;
+            }
+            return arr2;
+        }
+        public static string Task(string w, int n, int c)
+        {
+            string name;
+            switch (w)
+            {
+                case "Monday":
+                    name = "James";
+                    break;
+                case "Tuesday":
+                    name = "John";
+                    break;
+                case "Wednesday":
+                    name = "Robert";
+                    break;
+                case "Thursday":
+                    name = "Michael";
+                    break;
+                default:
+                    name = "William";
+                    break;
+
+            }
+            return $"It is {w} today, {name}, you have to work, you must spray {n} trees and you need {n*c} dollars to buy liquid";
+        }
+        public static int? chooseBestSum(int t, int k, List<int> ls)
+        {
+            return ls.Combinations(k).Select(x => (int?)x.Sum()).Where(x => x <= t).Max();
+        }
+        public static IEnumerable<IEnumerable<int>> Combinations(this IEnumerable<int> input, int size)
+        {
+            return size == 0 ? new[] { new int[0] } :
+              input.SelectMany((e, i) =>
+                input.Skip(i + 1).Combinations(size - 1).Select(c => (new[] { e }).Concat(c)));
+        }
+
+        public static string SpinWords(string sentence)
+        {
+            var arr = sentence.Split(' ').ToArray();
+            var arr2 = new string[arr.Length];
+            int i = 0;
+            foreach (var item in arr)
+            {
+                if(item.Length > 5)
+                {
+                    var charitem = item.ToCharArray();
+                    Array.Reverse(charitem);
+                    arr2[i] = string.Join("", charitem);
+                }
+                else
+                {
+                    arr2[i] = item;
+                }
+                i++;
+            }
+            return string.Join(" ", arr2);
+            //return String.Join(" ", sentence.Split(' ').Select(str => str.Length >= 5 ? new string(str.Reverse().ToArray()) : str));
+        }
+        public static string Unlock(string str)
+        {
+            var chararr = str.ToLower().ToCharArray();
+            string result = "";
+            foreach (var item in chararr)
+            {
+                switch(item)
+                {
+                    case 'a':
+                    case 'b':
+                    case 'c':
+                        result += "2";
+                        break;
+                    case 'd':
+                    case 'e':
+                    case 'f':
+                        result += "3";
+                        break;
+                    case 'g':
+                    case 'h':
+                    case 'i':
+                        result += "4";
+                        break;
+                    case 'j':
+                    case 'k':
+                    case 'l':
+                        result += "5";
+                        break;
+                    case 'm':
+                    case 'n':
+                    case 'o':
+                        result += "6";
+                        break;
+                    case 'p':
+                    case 'q':
+                    case 'r':
+                    case 's':
+                        result += "7";
+                        break;
+                    case 't':
+                    case 'u':
+                    case 'v':
+                        result += "8";
+                        break;
+                    case 'w':
+                    case 'x':
+                    case 'y':
+                    case 'z':
+                        result += "9";
+                        break;
+                }
+            }
+            return result;
+        }
+        public static int[] digitize(int n)
+        {
+            var arr = n.ToString().ToCharArray();
+            int[] arr2 = new int[arr.Length];
+            int i = 0;
+            foreach (var item in arr)
+            {
+                arr2[i] = Convert.ToInt32(item - 48);
+                i++;
+            }
+            return arr2;
+            //n.ToString().Select(c => (int)char.GetNumericValue(c)).ToArray();
+        }
     }
+    
 
 }
 
